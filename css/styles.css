@@ -1529,3 +1529,50 @@ footer {
     bottom: 20px;
   }
 }
+
+/* Center Dropdown Under Products */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  left: 50% !important;
+  transform: translateX(-90%);
+  min-width: 600px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Image styling */
+.product-img {
+  height: 120px;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.05);
+}
+
+/* Optional hover background */
+.dropdown-menu a:hover {
+  background: transparent;
+}
+
+/* Right aligned dropdown */
+.product-dropdown {
+  min-width: 850px;
+  border-radius: 12px;
+}
+
+/* Image styling */
+.product-img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.08);
+}
