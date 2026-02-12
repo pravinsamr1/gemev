@@ -1537,7 +1537,7 @@ footer {
 
 .dropdown-menu {
   left: 50% !important;
-  transform: translateX(-90%);
+  transform: translateX(-30%);
   min-width: 600px;
   background: #ffffff;
   border-radius: 10px;
@@ -1545,7 +1545,7 @@ footer {
 
 /* Image styling */
 .product-img {
-  height: 120px;
+  height: 80px !important;
   object-fit: contain;
   transition: 0.3s ease;
 }
