@@ -1561,7 +1561,7 @@ footer {
 
 /* Right aligned dropdown */
 .product-dropdown {
-  min-width: 850px;
+  min-width: 1000px;
   border-radius: 12px;
 }
 
