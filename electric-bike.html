@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMS Electric Bike — The Future Rides Here</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/ev-logo-02.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--CSS Plugins-->
+    <link rel="stylesheet" href="css/plugin.css">
+    <!-- Default CSS-->
+    <link rel="stylesheet" href="css/default.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--FontAwesome CSS-->
+    <link rel="stylesheet" href="icons/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ============================================================
+       GEMS ELECTRIC BIKE — SCROLL-DRIVEN SHOWCASE
+       Cinematic. Immersive. Premium.
+       ============================================================ */
+
+        :root {
+            --gems-black: #1a1a2e;
+            --gems-dark: #f5f9f0;
+            --gems-card-dark: #ffffff;
+            --gems-grey: #f0f4eb;
+            --gems-white: #ffffff;
+            --gems-green: #87C332;
+            --gems-green-dark: #69A316;
+            --gems-green-light: #e8f5d6;
+            --gems-green-mist: #f3fae6;
+            --gems-teal: #052730;
+            --gems-text: #1a1a2e;
+            --gems-text-light: #555;
+            --radius-card: 24px;
+            --radius-btn: 50px;
+            --transition-smooth: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gems-white);
+            color: var(--gems-text);
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gems-green), var(--gems-green-dark));
+            border-radius: 10px;
+        }
+
+
+        /* ============================================================
+       NAVIGATION — Floating glass bar
+       ============================================================ */
+        .bike-nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border: 1px solid rgba(135, 195, 50, 0.12);
+            border-radius: 60px;
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            transition: var(--transition-smooth);
+        }
+
+        .bike-nav:hover {
+            border-color: rgba(135, 195, 50, 0.25);
+            box-shadow: 0 8px 40px rgba(135, 195, 50, 0.1);
+        }
+
+        .bike-nav .logo img {
+            height: 36px;
+            transition: transform 0.3s ease;
+        }
+
+        .bike-nav .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .bike-nav .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bike-nav .nav-links a {
+            color: rgba(30, 30, 50, 0.55);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bike-nav .nav-links a:hover,
+        .bike-nav .nav-links a.active {
+            color: var(--gems-green);
+        }
+
+        .bike-nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gems-green);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .bike-nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .bike-nav .nav-cta {
+            background: linear-gradient(135deg, var(--gems-green), var(--gems-green-dark));
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .bike-nav .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(135, 195, 50, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .bike-nav {
+                padding: 10px 20px;
+                gap: 20px;
+            }
+
+            .bike-nav .nav-links {
+                display: none;
+            }
+        }
+
+
+        /* ============================================================
+       HERO — Full-screen cinematic bike reveal
+       ============================================================ */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, #f3fae6 0%, #ffffff 50%, var(--gems-green-light) 100%);
+        }
+
+        /* Animated particles background */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(135, 195, 50, 0.06) 1px, transparent 1px),
+                radial-gradient(circle at 80% 60%, rgba(135, 195, 50, 0.04) 1px, transparent 1px),
+                radial-gradient(circle at 50% 80%, rgba(135, 195, 50, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px, 120px 120px, 60px 60px;
+            animation: particleDrift 25s linear infinite;
+        }
+
+        @keyframes particleDrift {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(40px, -40px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1400px;
+            padding: 0 40px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(135, 195, 50, 0.1);
+            border: 1px solid rgba(135, 195, 50, 0.25);
+            color: var(--gems-green);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 1s 0.3s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 0.95;
+            margin-bottom: 24px;
+            color: var(--gems-text);
+            opacity: 0;
+            animation: fadeUp 1s 0.5s forwards;
+        }
+
+        .hero-title .green-text {
+            background: linear-gradient(90deg,
+                    var(--gems-green), var(--gems-green-light),
+                    var(--gems-green), var(--gems-green-light));
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 6s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -300% center;
+            }
+
+            100% {
+                background-position: 300% center;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gems-text-light);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeUp 1s 0.7s forwards;
+        }
+
+        .hero-bike {
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px;
+            opacity: 0;
+            animation: bikeReveal 1.5s 0.8s forwards;
+        }
+
+        .hero-bike img {
+            width: 100%;
+            filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.15)) drop-shadow(0 10px 30px rgba(135, 195, 50, 0.15));
+            transition: filter 0.6s ease;
+        }
+
+        /* Green glow behind bike */
+        .hero-bike::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(135, 195, 50, 0.15) 0%, transparent 70%);
+            animation: pulseGlow 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        @keyframes bikeReveal {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 3;
+            opacity: 0;
+            animation: fadeUp 1s 1.5s forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(30, 30, 50, 0.3);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, var(--gems-green), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                height: 40px;
+            }
+
+            50% {
+                opacity: 1;
+                height: 50px;
+            }
+        }
+
+
+        /* ============================================================
+       STATS STRIP — Animated counters
+       ============================================================ */
+        .stats-strip {
+            padding: 60px 0;
+            background: var(--gems-white);
+            border-top: 1px solid rgba(135, 195, 50, 0.1);
+            border-bottom: 1px solid rgba(135, 195, 50, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gems-text) 40%, var(--gems-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gems-text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 1px;
+            background: rgba(135, 195, 50, 0.15);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+
+        /* ============================================================
+       SCROLL-DRIVEN PART REVEAL SECTIONS
+       Each section: left/right alternating with parallax feel
+       ============================================================ */
+        .part-section {
+            position: relative;
+            padding: 140px 0;
+            overflow: hidden;
+        }
+
+        .part-section:nth-child(even) {
+            background: var(--gems-green-mist);
+        }
+
+        /* Subtle gradient accent lines */
+        .part-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(135, 195, 50, 0.1), transparent);
+        }
+
+        .part-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .part-section:nth-child(even) .part-inner {
+            direction: rtl;
+        }
+
+        .part-section:nth-child(even) .part-inner>* {
+            direction: ltr;
+        }
+
+        /* Image side */
+        .part-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .part-section:nth-child(even) .part-image {
+            transform: translateX(60px);
+        }
+
+        .part-image.visible {
+            opacity: 1;
+            transform: translateX(0) !important;
+        }
+
+        .part-image img {
+            width: 100%;
+            border-radius: var(--radius-card);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease;
+        }
+
+        .part-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Green glow ring around image */
+        .part-image::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: calc(var(--radius-card) + 3px);
+            background: linear-gradient(135deg, rgba(135, 195, 50, 0.3), transparent, rgba(135, 195, 50, 0.15));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .part-image.visible::after {
+            opacity: 1;
+        }
+
+        /* Text side */
+        .part-text {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .part-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .part-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gems-green);
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .part-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 28px;
+            height: 2px;
+            background: var(--gems-green);
+            transform: translateY(-50%);
+        }
+
+        .part-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .part-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gems-text-light);
+            margin-bottom: 32px;
+        }
+
+        /* Feature chips */
+        .part-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .feature-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gems-green-light);
+            border: 1px solid rgba(135, 195, 50, 0.2);
+            color: var(--gems-text);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .feature-chip:hover {
+            background: rgba(135, 195, 50, 0.2);
+            border-color: rgba(135, 195, 50, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .feature-chip .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gems-green);
+        }
+
+
+        /* ============================================================
+       SPECS TABLE — Glass cards
+       ============================================================ */
+        .specs-section {
+            padding: 140px 0;
+            background: var(--gems-white);
+            position: relative;
+        }
+
+        .specs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(180deg, var(--gems-green-mist), var(--gems-white));
+        }
+
+        .specs-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .specs-header h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .specs-header p {
+            color: var(--gems-text-light);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .specs-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .spec-card {
+            background: var(--gems-white);
+            border: 1px solid rgba(135, 195, 50, 0.12);
+            border-radius: 20px;
+            padding: 32px 28px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .spec-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(135, 195, 50, 0.3);
+            box-shadow: 0 20px 60px rgba(135, 195, 50, 0.12), 0 0 40px rgba(135, 195, 50, 0.06);
+        }
+
+        .spec-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .spec-value {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gems-text), var(--gems-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .spec-name {
+            font-size: 13px;
+            color: var(--gems-text-light);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+
+        /* ============================================================
+       FULL BIKE SECTION — Scroll-driven parallax
+       ============================================================ */
+        .full-bike-section {
+            position: relative;
+            padding: 200px 0;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center bottom,
+                    rgba(135, 195, 50, 0.08) 0%, var(--gems-green-mist) 60%);
+        }
+
+        .full-bike-section h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .full-bike-section h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .full-bike-section .tagline {
+            color: var(--gems-text-light);
+            font-size: 18px;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .full-bike-section .tagline.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .full-bike-image {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .full-bike-image.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .full-bike-image img {
+            width: 100%;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12)) drop-shadow(0 10px 40px rgba(135, 195, 50, 0.1));
+        }
+
+        /* Spotlight callouts on full bike */
+        .callout {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .callout.visible {
+            opacity: 1;
+        }
+
+        .callout-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gems-green);
+            box-shadow: 0 0 20px rgba(135, 195, 50, 0.5);
+            animation: dotPulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(135, 195, 50, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(135, 195, 50, 0.6);
+            }
+        }
+
+        .callout-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gems-green), transparent);
+            flex-shrink: 0;
+        }
+
+        .callout-text {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(135, 195, 50, 0.25);
+            border-radius: 12px;
+            padding: 10px 18px;
+            white-space: nowrap;
+        }
+
+        .callout-text h6 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gems-green);
+            margin: 0 0 2px;
+        }
+
+        .callout-text span {
+            font-size: 11px;
+            color: var(--gems-text-light);
+        }
+
+        /* Position callouts on full bike */
+        .callout-headlight {
+            top: 20%;
+            left: 5%;
+        }
+
+        .callout-battery {
+            top: 55%;
+            left: 15%;
+            transition-delay: 0.15s;
+        }
+
+        .callout-motor {
+            bottom: 15%;
+            right: 10%;
+            transition-delay: 0.3s;
+        }
+
+        .callout-seat {
+            top: 15%;
+            right: 20%;
+            transition-delay: 0.45s;
+        }
+
+
+        /* ============================================================
+       CTA SECTION — Pricing & action
+       ============================================================ */
+        .cta-section {
+            padding: 140px 0;
+            text-align: center;
+            background: var(--gems-green-mist);
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(135, 195, 50, 0.03), transparent 60%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .cta-price-badge {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--gems-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-price {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--gems-text), var(--gems-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-note {
+            color: var(--gems-text-light);
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-ev {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--gems-green), var(--gems-green-dark));
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary-ev:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(135, 195, 50, 0.4);
+            color: #fff;
+        }
+
+        .btn-secondary-ev {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--gems-text);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(30, 30, 50, 0.15);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .btn-secondary-ev:hover {
+            border-color: var(--gems-green);
+            color: var(--gems-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(135, 195, 50, 0.15);
+        }
+
+
+        /* ============================================================
+       FOOTER — Minimal dark
+       ============================================================ */
+        .bike-footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(135, 195, 50, 0.1);
+        }
+
+        .bike-footer p {
+            color: var(--gems-text-light);
+            font-size: 13px;
+        }
+
+        .bike-footer a {
+            color: var(--gems-green);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .bike-footer a:hover {
+            opacity: 0.7;
+        }
+
+
+        /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+        @media (max-width: 992px) {
+            .part-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .part-section:nth-child(even) .part-inner {
+                direction: ltr;
+            }
+
+            .part-section {
+                padding: 100px 0;
+            }
+
+            .callout {
+                display: none;
+            }
+
+            .hero-title {
+                letter-spacing: -1px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding: 120px 0 60px;
+            }
+
+            .part-inner {
+                padding: 0 20px;
+            }
+
+            .specs-grid {
+                padding: 0 20px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+
+    <div id="header" style="background: #052730;"></div>
+
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section" id="overview" style="padding-top: 100px;">
+        <div class="hero-content">
+            <div class="hero-badge">New 2026 Model</div>
+            <p class="hero-subtitle">
+                Engineered for the city. Built for the future.
+                Zero emissions. Maximum performance.
+            </p>
+            <div class="hero-bike">
+                <img src="gems/e3.png" alt="GEMS Electric Bike">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+
+    <!-- ===== STATS STRIP ===== -->
+    <section class="stats-strip">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item" data-delay="0">
+                        <div class="stat-number">190 <small style="font-size:0.4em">km</small></div>
+                        <div class="stat-label">Range</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item" data-delay="100">
+                        <div class="stat-number">85 <small style="font-size:0.4em">km/h</small></div>
+                        <div class="stat-label">Top Speed</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item" data-delay="200">
+                        <div class="stat-number">3.5 <small style="font-size:0.4em">hrs</small></div>
+                        <div class="stat-label">Full Charge</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item" data-delay="300">
+                        <div class="stat-number">0 <small style="font-size:0.4em">g</small></div>
+                        <div class="stat-label">CO₂ Emissions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PART 1: LED HEADLIGHT ===== -->
+    <section class="part-section" id="features">
+        <div class="part-inner">
+            <div class="part-image">
+                <img src="gems/bike-parts/headlight.png" alt="LED Headlight Assembly">
+            </div>
+            <div class="part-text">
+                <span class="part-label">Lighting System</span>
+                <h2 class="part-title">Full LED<br>Headlight</h2>
+                <p class="part-desc">
+                    Command the road with our advanced LED projector headlight.
+                    Brilliant illumination up to 120 meters with adaptive beam technology
+                    that adjusts based on your speed and environment.
+                </p>
+                <div class="part-features">
+                    <span class="feature-chip"><span class="dot"></span> 120m Visibility</span>
+                    <span class="feature-chip"><span class="dot"></span> DRL Integrated</span>
+                    <span class="feature-chip"><span class="dot"></span> All-Weather</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PART 2: BATTERY & POWER ===== -->
+    <section class="part-section">
+        <div class="part-inner">
+            <div class="part-image">
+                <img src="gems/bike-parts/battery.png" alt="Lithium-Ion Battery Pack">
+            </div>
+            <div class="part-text">
+                <span class="part-label">Power Unit</span>
+                <h2 class="part-title">Lithium-Ion<br>Battery Pack</h2>
+                <p class="part-desc">
+                    The heart of GEMS Electric Bike — a high-density lithium-ion battery
+                    delivering 190 km of pure electric range on a single charge.
+                    Smart BMS monitors every cell for optimal performance and safety.
+                </p>
+                <div class="part-features">
+                    <span class="feature-chip"><span class="dot"></span> 190 km Range</span>
+                    <span class="feature-chip"><span class="dot"></span> Fast Charge</span>
+                    <span class="feature-chip"><span class="dot"></span> IP67 Rated</span>
+                    <span class="feature-chip"><span class="dot"></span> Smart BMS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PART 3: DASHBOARD ===== -->
+    <section class="part-section">
+        <div class="part-inner">
+            <div class="part-image">
+                <img src="gems/bike-parts/dashboard.png" alt="Digital Dashboard">
+            </div>
+            <div class="part-text">
+                <span class="part-label">Cockpit</span>
+                <h2 class="part-title">Digital<br>Dashboard</h2>
+                <p class="part-desc">
+                    Stay informed with the full-color TFT display. Real-time speed,
+                    battery percentage, ride mode, navigation, and diagnostics —
+                    all at a glance. Bluetooth-connected for smartphone integration.
+                </p>
+                <div class="part-features">
+                    <span class="feature-chip"><span class="dot"></span> TFT Display</span>
+                    <span class="feature-chip"><span class="dot"></span> Bluetooth</span>
+                    <span class="feature-chip"><span class="dot"></span> Navigation</span>
+                    <span class="feature-chip"><span class="dot"></span> OTA Updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PART 4: HUB MOTOR ===== -->
+    <section class="part-section">
+        <div class="part-inner">
+            <div class="part-image">
+                <img src="gems/bike-parts/motor.png" alt="Electric Hub Motor">
+            </div>
+            <div class="part-text">
+                <span class="part-label">Drivetrain</span>
+                <h2 class="part-title">Hub Motor<br>Technology</h2>
+                <p class="part-desc">
+                    Our precision-engineered brushless DC hub motor delivers instant
+                    torque with zero chain maintenance. Regenerative braking recovers
+                    energy on every stop, extending your range effortlessly.
+                </p>
+                <div class="part-features">
+                    <span class="feature-chip"><span class="dot"></span> 3000W Peak</span>
+                    <span class="feature-chip"><span class="dot"></span> Instant Torque</span>
+                    <span class="feature-chip"><span class="dot"></span> Regen Braking</span>
+                    <span class="feature-chip"><span class="dot"></span> Maintenance-Free</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FULL BIKE OVERVIEW with callouts ===== -->
+    <section class="full-bike-section" id="full-overview">
+        <div class="container">
+            <h2>The Complete Machine</h2>
+            <p class="tagline">Every detail, perfected.</p>
+        </div>
+        <div class="full-bike-image">
+            <img src="gems/e3.png" alt="GEMS Electric Bike — Full View">
+            <!-- Callouts -->
+            <div class="callout callout-headlight">
+                <div class="callout-text">
+                    <h6>LED Headlight</h6>
+                    <span>120m visibility</span>
+                </div>
+                <div class="callout-line"></div>
+                <div class="callout-dot"></div>
+            </div>
+            <div class="callout callout-battery">
+                <div class="callout-text">
+                    <h6>Li-Ion Battery</h6>
+                    <span>190 km range</span>
+                </div>
+                <div class="callout-line"></div>
+                <div class="callout-dot"></div>
+            </div>
+            <div class="callout callout-motor" style="flex-direction: row-reverse;">
+                <div class="callout-text">
+                    <h6>Hub Motor</h6>
+                    <span>3000W peak</span>
+                </div>
+                <div class="callout-line" style="background: linear-gradient(270deg, var(--gems-green), transparent);">
+                </div>
+                <div class="callout-dot"></div>
+            </div>
+            <div class="callout callout-seat" style="flex-direction: row-reverse;">
+                <div class="callout-text">
+                    <h6>Comfort Seat</h6>
+                    <span>Ergonomic gel</span>
+                </div>
+                <div class="callout-line" style="background: linear-gradient(270deg, var(--gems-green), transparent);">
+                </div>
+                <div class="callout-dot"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== SPECS TABLE ===== -->
+    <section class="specs-section" id="specs">
+        <div class="specs-header">
+            <h2>Specifications</h2>
+            <p>Every number, every detail.</p>
+        </div>
+        <div class="specs-grid">
+            <div class="spec-card" style="transition-delay: 0s">
+                <span class="spec-icon">⚡</span>
+                <div class="spec-value">3000W</div>
+                <div class="spec-name">Motor Power</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.1s">
+                <span class="spec-icon">🔋</span>
+                <div class="spec-value">72V 40Ah</div>
+                <div class="spec-name">Battery</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.2s">
+                <span class="spec-icon">🛣️</span>
+                <div class="spec-value">190 km</div>
+                <div class="spec-name">Range</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.3s">
+                <span class="spec-icon">💨</span>
+                <div class="spec-value">85 km/h</div>
+                <div class="spec-name">Top Speed</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.4s">
+                <span class="spec-icon">⏱️</span>
+                <div class="spec-value">3.5 hrs</div>
+                <div class="spec-name">Charge Time</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.5s">
+                <span class="spec-icon">🏋️</span>
+                <div class="spec-value">145 kg</div>
+                <div class="spec-name">Kerb Weight</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.6s">
+                <span class="spec-icon">🛑</span>
+                <div class="spec-value">Disc/Disc</div>
+                <div class="spec-name">Brakes F/R</div>
+            </div>
+            <div class="spec-card" style="transition-delay: 0.7s">
+                <span class="spec-icon">📐</span>
+                <div class="spec-value">1350 mm</div>
+                <div class="spec-name">Wheelbase</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== CTA / PRICING ===== -->
+    <section class="cta-section" id="pricing">
+        <div class="cta-content">
+            <div class="cta-price-badge">Starting From</div>
+            <div class="cta-price"><h1>₹1,19,999</h1></div>
+            <p class="cta-note">
+                Ex-showroom price. EMI starts at ₹2,999/month.
+                Includes 3-year warranty & free servicing.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary-ev">
+                    Book Now
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="index.html" class="btn-secondary-ev">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+
+    <!-- ===== SCROLL-DRIVEN ANIMATION ENGINE ===== -->
+     <script src="js/common-footer.js"></script>
+     <script src="js/common-header.js"></script>
+    <script>
+        // ========================================================
+        //  Intersection Observer — staggered reveal on scroll
+        // ========================================================
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animatable elements
+        document.querySelectorAll(
+            '.stat-item, .part-image, .part-text, .spec-card, .full-bike-image, .full-bike-section h2, .full-bike-section .tagline, .callout'
+        ).forEach(el => revealObserver.observe(el));
+
+        // ========================================================
+        //  Smooth parallax on hero bike (mouse movement)
+        // ========================================================
+        const heroBike = document.querySelector('.hero-bike img');
+        if (heroBike) {
+            document.querySelector('.hero-section').addEventListener('mousemove', (e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+                const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+                heroBike.style.transform = `translate(${x * 15}px, ${y * 10}px) scale(1.01)`;
+            });
+
+            document.querySelector('.hero-section').addEventListener('mouseleave', () => {
+                heroBike.style.transform = 'translate(0, 0) scale(1)';
+            });
+        }
+
+        // ========================================================
+        //  Active nav link on scroll
+        // ========================================================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ========================================================
+        //  Stagger spec cards
+        // ========================================================
+        const specCards = document.querySelectorAll('.spec-card');
+        const specObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseFloat(entry.target.style.transitionDelay) * 1000 || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        specCards.forEach(card => specObserver.observe(card));
+    </script>
+
+    <!-- Bootstrap JS (for potential reuse) -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    
+  <script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- LOAD HEADER FIRST -->
+<script src="js/common-header.js"></script>
+
+<!-- THEN LOAD PLUGINS -->
+<script src="js/plugin.js"></script>
+<script src="js/main.js"></script>
+<script src="js/common-footer.js"></script>
+
+</body>
+
+</html>

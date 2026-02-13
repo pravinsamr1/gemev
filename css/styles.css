@@ -1145,7 +1145,7 @@ footer {
 
 /* Banner Section */
 .banner-1{
-  background-image: linear-gradient(180deg, #052730 100%, #F5FAEE 100%);
+  /* background-image: linear-gradient(180deg, #00a1ce 100%, #F5FAEE 100%); */
   margin-top: -100px;
 }
 
@@ -1215,11 +1215,11 @@ footer {
 
 
 .banner-1 .overlay{
-  background-image: url(../images/map-evcharge.png);
+  background-image: url(../gems/banner-back.png);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .05;
+  opacity: .9;
 }
 
 .banner-1-image-inner {
@@ -1575,4 +1575,69 @@ footer {
 
 .product-img:hover {
   transform: scale(1.08);
+}
+
+
+
+
+/* ============================= */
+/*   FIX PRODUCTS MOBILE MENU    */
+/* ============================= */
+
+@media (max-width: 991px) {
+
+  .dropdown-menu {
+  transform: translateX(-10%) !important;
+}
+
+  /* Reset desktop dropdown positioning */
+  .dropdown-menu {
+    left: 0 !important;
+    transform: none !important;
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .product-dropdown {
+    min-width: 100% !important;
+    padding: 10px 40px !important;
+  }
+
+  /* Use clean 2-column grid */
+  .product-dropdown .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Remove bootstrap column sizing */
+  .product-dropdown .col-6,
+  .product-dropdown .col-md-4,
+  .product-dropdown .col-lg-2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Product card style */
+  .product-dropdown a {
+    background: #fff;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .product-dropdown .product-img {
+    width: 65px !important;
+    height: auto;
+  }
+
+  .product-dropdown h6 {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
 }

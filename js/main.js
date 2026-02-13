@@ -142,7 +142,7 @@
   });
 
   $('.price-slider').slick({
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
@@ -154,7 +154,7 @@
   });
 
   $('.project-slider').slick({
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
