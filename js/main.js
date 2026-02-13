@@ -232,13 +232,16 @@
   let $headerMenu = $('.header-nav-menu');
 
     $(window).on('scroll', function () {
-        let curScroll = $(window).scrollTop();
 
-        if (curScroll > 130) {
-            $headerMenu.addClass('navbar-sticky-in');
-        } else {
-            $headerMenu.removeClass('navbar-sticky-in');
-        }
-    });
+    let $headerMenu = $('.header-nav-menu'); // select inside scroll
+    let curScroll = $(window).scrollTop();
+
+    if (curScroll > 130) {
+        $headerMenu.addClass('navbar-sticky-in');
+    } else {
+        $headerMenu.removeClass('navbar-sticky-in');
+    }
+
+});
 
 })(jQuery);
