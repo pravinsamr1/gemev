@@ -16,14 +16,22 @@ document.addEventListener("DOMContentLoaded", function() {
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. </p>
                 </div>
                 <div class="footer-socials d-flex justify-content-center justify-content-xl-start">
-                  <a href="" class="rounded-circle text-center me-1 bg-lightdark"><i class="fa fa-facebook"
-                      aria-hidden="true"></i></a>
-                  <a href="" class="rounded-circle text-center me-1 bg-lightdark"><i class="fa fa-twitter"
-                      aria-hidden="true"></i></a>
-                  <a href="" class="rounded-circle text-center me-1 bg-lightdark"><i class="fa fa-google-plus"
-                      aria-hidden="true"></i></a>
-                  <a href="" class="rounded-circle text-center bg-lightdark"><i class="fa fa-instagram"
-                      aria-hidden="true"></i></a>
+                  <a href="#" class="rounded-circle text-center me-1 bg-lightdark">
+    <i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#" class="rounded-circle text-center me-1 bg-lightdark">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="rounded-circle text-center me-1 bg-lightdark">
+    <i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="#" class="rounded-circle text-center me-1 bg-lightdark">
+    <i class="fa-brands fa-youtube"></i>
+</a>
+                  
                 </div>
               </div>
             </div>
@@ -35,8 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   <li class="mb-4"><a href="about.html">About Us</a></li>
                   <li class="mb-4"><a href="">Our EVs</a></li>
                   <li class="mb-4"><a href="blog-list.html">News & Articles</a></li>
-                  <li class="mb-4"><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li class="mb-4"><a href="">Customer Support</a></li>
                 </ul>
               </div>
             </div>
@@ -45,12 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h3 class="text-white mb-2">Features</h3>
                 <div class="seperator w-25 border-bottom border-1 border-white mb-6 ms-xl-1 m-auto"></div>
                 <ul class="list-unstyled">
-                  <li class="mb-4"><a href="">Support Plans</a></li>
-                  <li class="mb-4"><a href="">Benifits</a></li>
-                  <li class="mb-4"><a href="">Subscriptions</a></li>
-                  <li class="mb-4"><a href="">Payment Methods</a></li>
-                  <li class="mb-4"><a href="">Onsite Payment</a></li>
-                  <li><a href="">Merchant Refund</a></li>
+                  <li class="mb-4"><a href="">Bike</a></li>
+                  <li class="mb-4"><a href="">Scooter</a></li>
+                  <li class="mb-4"><a href="">L5 - Cargo</a></li>
+                  <li class="mb-4"><a href="">L5 - Passenger</a></li>
                 </ul>
               </div>
             </div>
@@ -80,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
                   <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-lg-start">
                     <li class="me-4 small"><a href="">Terms of Conditions</a></li>
                     <li class="me-4 small"><a href="">Privacy Policy</a></li>
-                    <li class="small"><a href="">Cookie Policy</a></li>
                   </ul>
                 </div>
               </div>
